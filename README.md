@@ -7,12 +7,12 @@ Simple API program that parses and analyzes posts from an publicly available API
 ## Setup (Windows)
 
 - This project requires a few features to be installed before it can run.
-- To install all necessary programs, run `setup.bat` in the `../blog_posts` project directory.
+- To install all necessary programs, run `setup.bat` in the `../API_Documentation_Demo` project directory.
 
 ## Setup (Linux)
 
 - This project requires a few features to be installed before it can run.
-- To install all necessary programs, run `./setup_env.sh` in the `../blog_posts` project directory.
+- To install all necessary programs, run `./setup_env.sh` in the `../API_Documentation_Demo` project directory.
 
 ## Manual setup
 
@@ -28,4 +28,4 @@ You can then visit local `localhost:5050/swagger` to view all the available rout
 
 ## Running testcases
 
-Running test cases can be done by executing this command: `python -m pytest` in the `blog_posts` directory.
+Running test cases can be done by executing this command: `python -m pytest` in the `../API_Documentation_Demo` directory.
