@@ -1,0 +1,23 @@
+summary: "Fetch an subscription based on the subscription ID."
+
+parameters:
+  - name: subscriptionId
+    in: query
+    required: true
+    description: Field for subscription ID.
+    type: string
+
+responses:
+  200:
+    description: Object containing the newly added subscription.
+    schema:
+      $ref: "#/definitions/components/Subscription"
+  400:
+    description: Bad request. Inputted information invalid. Ensure that the ID is a valid string.
+  404:
+    description: Cannot find object with inputted ID.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

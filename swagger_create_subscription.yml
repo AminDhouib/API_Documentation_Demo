@@ -1,0 +1,21 @@
+summary: "Create a subscription for the billing system."
+parameters:
+  - name: subscription
+    in: body
+    description: Body that holds the details of the subscription that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/SubscriptionCreation"
+
+responses:
+  200:
+    description: Object containing the newly added subscription.
+    schema:
+      $ref: "#/definitions/components/Subscription"
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

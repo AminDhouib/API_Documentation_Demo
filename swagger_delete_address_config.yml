@@ -1,0 +1,23 @@
+summary: "Delete an address based on the address ID."
+
+parameters:
+  - name: addressId
+    in: query
+    required: true
+    description: Field for address ID.
+    type: string
+
+responses:
+  200:
+    description: Object containing the deleted address.
+    schema:
+      $ref: "#/definitions/components/Address"
+  400:
+    description: Bad request. Inputted information invalid. Ensure that the ID is a valid string.
+  404:
+    description: Cannot find object with inputted ID.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

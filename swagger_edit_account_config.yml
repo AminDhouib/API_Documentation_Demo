@@ -1,0 +1,29 @@
+summary: "Edit an account for the billing system."
+parameters:
+  - name: accountId
+    in: query
+    required: true
+    description: Field for Account ID.
+    type: string
+
+  - name: account
+    in: body
+    description: Response that holds the details of the account that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/AccountCreation"
+
+responses:
+  200:
+    description: Object containing the newly edited account.
+    schema:
+      $ref: "#/definitions/components/Account"
+  400:
+    description: Bad request. Inputted information invalid. Ensure that the ID is a valid string.
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

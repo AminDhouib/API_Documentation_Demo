@@ -1,0 +1,21 @@
+summary: "Create an account for the billing system."
+parameters:
+  - name: account
+    in: body
+    description: Body that holds the details of the account that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/AccountCreation"
+
+responses:
+  200:
+    description: Object containing the newly added account.
+    schema:
+      $ref: "#/definitions/components/Account"
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

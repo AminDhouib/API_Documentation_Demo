@@ -1,0 +1,94 @@
+components:
+  AccountCreation:
+    type: object
+    properties:
+      billing_address_id:
+        type: string
+      subscriptions:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+        uniqueItems: true
+    required:
+      - billing_address_id
+
+  Account:
+    type: object
+    properties:
+      id:
+        type: string
+      balance:
+        type: string
+      status:
+        type: string
+      subscriptions:
+        type: array
+        items:
+          $ref: "#/definitions/components/Subscription"
+      address:
+        $ref: "#/definitions/components/Address"
+    required:
+      - address
+
+  SubscriptionCreation:
+    type: object
+    properties:
+      phone_number:
+        type: string
+      price_plan:
+        type: string
+    required:
+      - phone_number
+      - price_plan
+
+  Subscription:
+    type: object
+    properties:
+      id:
+        type: string
+      phone_number:
+        type: string
+      status:
+        type: string
+      price_plan:
+        type: string
+    required:
+      - phone_number
+      - price_plan
+
+  Address:
+    type: object
+    properties:
+      id:
+        type: string
+      address1:
+        type: string
+      address2:
+        type: string
+      postal_code:
+        type: string
+      province:
+        type: string
+    required:
+      - address1
+      - postal_code
+      - province
+
+  AddressCreation:
+    type: object
+    properties:
+      address1:
+        type: string
+      address2:
+        type: string
+      postal_code:
+        type: string
+      province:
+        type: string
+    required:
+      - address1
+      - postal_code
+      - province

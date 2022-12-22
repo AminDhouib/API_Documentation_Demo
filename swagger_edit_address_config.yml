@@ -1,0 +1,28 @@
+summary: "Edit an address for the billing system."
+parameters:
+  - name: addressId
+    in: query
+    required: true
+    description: Field for address ID.
+    type: string
+  - name: address
+    in: body
+    description: Response that holds the details of the address that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/AddressCreation"
+
+responses:
+  200:
+    description: Object containing the newly edited address.
+    schema:
+      $ref: "#/definitions/components/Address"
+  400:
+    description: Bad request. Inputted information invalid. Ensure that the ID is a valid string.
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

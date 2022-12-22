@@ -1,0 +1,28 @@
+summary: "Edit an subscription for the billing system."
+parameters:
+  - name: subscriptionId
+    in: query
+    required: true
+    description: Field for subscription ID.
+    type: string
+  - name: subscription
+    in: body
+    description: Response that holds the details of the subscription that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/SubscriptionCreation"
+
+responses:
+  200:
+    description: Object containing the newly edited subscription.
+    schema:
+      $ref: "#/definitions/components/Subscription"
+  400:
+    description: Bad request. Inputted information invalid. Ensure that the ID is a valid string.
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"

@@ -1,0 +1,21 @@
+summary: "Create a billing address for the billing system."
+parameters:
+  - name: adress
+    in: body
+    description: Body that holds the details of the address that will be added.
+    required: true
+    schema:
+      $ref: "#/definitions/components/AddressCreation"
+
+responses:
+  200:
+    description: Object containing the newly added billing address.
+    schema:
+      $ref: "#/definitions/components/Subscription"
+  400:
+    description: Bad request. Inputted information invalid.
+  500:
+    description: Unexpected error.
+
+definitions:
+  import: "./definitions.yaml"
